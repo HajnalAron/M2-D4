@@ -1,4 +1,17 @@
+
 #listOfNames {
     height: 200px;
+    width: 625px;
     text-align: start;
+}
+
+body {
+    background-color: rgb(5, 231, 231);
+    color: coral; 
+}
+
+.teamAndPlayerList {
+    background-color: rgb(5, 231, 231);
+    color: coral;
+    padding-left: 15px;
 }

@@ -22,11 +22,16 @@ const shufflePlayers = (array) => {
       shufflePlayers(arrayOfPlayers)
     let listOfAllPlayers = document.createElement('ul')
     listOfAllPlayers.id = "listOfAllPlayers"
+    listOfAllPlayers.innerText = "List of Players"
+    listOfAllPlayers.classList.add('list-group')
+    listOfAllPlayers.classList.add('teamAndPlayerList')
     document.getElementById('containerOfTeams').appendChild(listOfAllPlayers)
     for (let i = 0; i < arrayOfPlayers.length; i++){
         let newPlayer = document.createElement('li')
         newPlayer.innerText = arrayOfPlayers[i]
         newPlayer.id = "Player" + (i+1)
+        newPlayer.classList.add('list-group-item')
+        newPlayer.classList.add('teamAndPlayerList')
         listOfAllPlayers.appendChild(newPlayer)
     }
   }
@@ -36,11 +41,14 @@ const shufflePlayers = (array) => {
       for (let i = 0;i < numberOfTeams; i++){
       let newTeamContainer = document.createElement('div')
       newTeamContainer.id = "teamContainer" + (i+1)
+      newTeamContainer.classList.add('teamAndPlayerList')
       newTeamContainer.innerText = "Team" + " " + (i+1)
       let containerOfTeams = document.getElementById('containerOfTeams')
       containerOfTeams.appendChild(newTeamContainer)
       let newPlayerList = document.createElement('ul')
       newPlayerList.id = "playerList" + (i+1)
+      newPlayerList.classList.add('list-group')
+      newPlayerList.classList.add('teamAndPlayerList')
       newTeamContainer.appendChild(newPlayerList)
       }
   }

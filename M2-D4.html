@@ -30,18 +30,18 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet2" href="M2-D4.css">
+    <link rel="stylesheet" href="M2-D4.css">
   </head>
   <body>
-
-    <form>
-      <div class="form-group">
-        <label for="listOfNames">List of players</label>
+    <h1>Team Generator With Bad Design</h1>
+    <form class="teamAndPlayerList">
+      <div class="form-group ">
+        <label for="listOfNames">Team Generator</label>
         <textarea class="form-control" id="listOfNames" rows="3"></textarea>
-        <input id="numberOfTeams" type="number" min="1">
-        <input type="button" onclick="generateTeams()" value="generateTeams">
-        <input type="button" onclick="generatePlayerList()" value="playerList">
-        <input type="button" onclick="assignPlayer()" value="assignPlayer">
+        <input id="numberOfTeams" type="number" min="1" placeholder="1">
+        <input type="button" onclick="generateTeams()" value="Generate Teams">
+        <input type="button" onclick="generatePlayerList()" value="Generate list of players">
+        <input type="button" onclick="assignPlayer()" value="Assign a player">
       </div>
     </form>
       <div class="container">
