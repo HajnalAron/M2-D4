@@ -1,5 +1,8 @@
 let arrayOfPlayers = []
 let numberOfTeams = 0
+let targetPlayerNumber = 1
+let currentTeam = 1
+
 const getNames = function(){
     let namesInput = document.getElementById('listOfNames').value
     arrayOfPlayers = namesInput.split("\n")
@@ -15,6 +18,8 @@ const shufflePlayers = (array) => {
   }
 
   const generatePlayerList = function(){
+      getNames()
+      shufflePlayers(arrayOfPlayers)
     let listOfAllPlayers = document.createElement('ul')
     listOfAllPlayers.id = "listOfAllPlayers"
     document.getElementById('containerOfTeams').appendChild(listOfAllPlayers)
@@ -27,7 +32,7 @@ const shufflePlayers = (array) => {
   }
 
   const generateTeams = function(){
-      numberOfTeams = document.getElementById('numberOfTeams').value
+      numberOfTeams = parseInt(document.getElementById('numberOfTeams').value)
       for (let i = 0;i < numberOfTeams; i++){
       let newTeamContainer = document.createElement('div')
       newTeamContainer.id = "teamContainer" + (i+1)
@@ -41,13 +46,11 @@ const shufflePlayers = (array) => {
   }
 
   const assignPlayer = function(){
-      let currentTeam = 1
-      if (currentTeam === numberOfTeams){
-          let currentTeam = 1
+      if (currentTeam > numberOfTeams){
+          currentTeam = 1
       }
-      let targetPlayerNumber = 1
-      let targetPlayer = document.getElementById(`"Player" + ${targetPlayerNumber}`)
-      let targetTeam = document.getElementById(`"teamContainer" + ${currentTeam}`)
+      let targetPlayer = document.getElementById(`Player${targetPlayerNumber}`)
+      let targetTeam = document.getElementById(`teamContainer${currentTeam}`)
       targetTeam.appendChild(targetPlayer)
       currentTeam += 1
       targetPlayerNumber += 1
